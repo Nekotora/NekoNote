@@ -1,13 +1,6 @@
 <?php
+	define ("DB_SERVER", "localhost");
+	define ("DB_USER", "root");
+	define ("DB_PWD", "11111111");
+	define ("DB_NAME", "nekonote");
 
-class Config {
-	static $DEBUG = true;
-	static $DB = [
-		'server'   => 'localhost',
-		'port'     => 3306,
-		'dbname'   => 'nekonote',
-		'username' => 'root',
-		'password' => '11111111',
-		'prefix'   => ''
-	];
-}

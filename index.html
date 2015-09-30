@@ -38,7 +38,7 @@
 					<p>{{note.content}}</p>
 					<div class="sub">
 						<span class="user">{{note.user}}</span>
-						<span class="time">{{note.time |  date:'yyyy-MM-dd hh:mm:ss'}}</span>
+						<span class="time">{{note.time * 1000 |  date:'yyyy-MM-dd hh:mm:ss'}}</span>
 					</div>
 				</div>
 			</li>

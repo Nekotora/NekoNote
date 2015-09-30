@@ -26,14 +26,14 @@ case 'getnote': //获取留言
 		$r[] = $t;
 	}
 
+	//拼一个json
 	echo json_encode($r);
   break;  
 
 case 'addnote': //添加留言
 
-	//解析json对象
+	//解析json对象为object
 	$post =  json_decode(file_get_contents('php://input'));
-	var_dump($post);
 
 	//检查数据不为空
 	foreach (array('content', 'user') as $v) {
@@ -43,8 +43,8 @@ case 'addnote': //添加留言
 	//存入数据库
 	$query = 'INSERT INTO `nekonote`.`note` (`time`, `content`, `user`) VALUES (\'' .
 		time() .'\',\''.
-		base64_encode(htmlspecialchars($post['content'])) .'\',\''. 
-		base64_encode(htmlspecialchars($post['user'])) .'\')';
+		base64_encode(htmlspecialchars($post->content)) .'\',\''. 
+		base64_encode(htmlspecialchars($post->user)) .'\')';
 	$result = $db->query($query);
 	echo json_encode(array('status'=>'success'));
 	break;
