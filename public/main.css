@@ -1,0 +1,199 @@
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html,body{
+	background-color: #EFEFEF;
+	color: #444;
+	width: 100%;
+	font-size: 15px;
+	font-family: Ubuntu, "Helvetica Neue", Helvetica, "Nimbus Sans L", "Open Sans", "Roboto", "Segoe WP", "Segoe UI", arial, "Liberation Sans", freesans, clean, "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans CJK TC", "Source Han Sans TW", "Noto Sans CJK JP", "Source Han Sans JP", "Noto Sans CJK", "Source Han Sans", "Microsoft YaHei UI", "Microsoft YaHei", DengXian, "Wenquanyi Micro Hei", "ST Heiti", "Droid Sans Fallback", "Microsoft JhengHei", SimSun, sans-serif;
+}
+
+::selection{
+	background:rgba(0,0,0,.25);
+}
+
+.clear:after{
+  content:"";
+  display:block;
+  height:0;
+  visibility:hidden;
+  clear:both;
+}
+
+.container{	
+	width: 960px;
+	padding: 20px;
+	margin: 0 auto;
+	margin-top: 30px;
+	background: #fff;
+	box-shadow: 0 3px 6px rgba(0,0,0,.08);
+}
+
+a{
+	text-decoration: none;
+}
+
+.header{
+	background: #65BCD8;
+	box-shadow: 0 3px 6px rgba(0,0,0,.08);
+}
+
+.header .inner {
+	position: relative;
+	width: 1000px;
+	height: 160px;
+	margin: 0 auto;
+	color: #fff;
+}
+
+.header h1 {
+	font-size: 60px;
+	font-weight: normal;
+	padding-top: 30px;
+}
+
+.header h2{
+	font-size: 22px;
+	font-weight: normal;
+	padding-top: 5px;
+}
+
+.header a {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	font-size: 30px;
+	color: #fff;
+	border: 3px solid #fff;
+	border-radius: 100%;
+	transition: all .3s ease;
+}
+
+.header a:hover{
+	background: #fff;
+	color: #65BCD8;
+}
+
+ul.notebox{
+	padding-top: 15px;
+}
+
+ul.notebox li{
+	list-style: none;
+	min-height: 140px;
+	width: 1000px;
+	margin: 0 auto;
+	margin-top: 30px;
+	background: #fff;
+	box-shadow: 0 3px 6px rgba(0,0,0,.08);
+}
+
+ul.notebox li i{
+	float: left;
+	width: 140px;
+	height: 100%;
+	min-height: 140px;
+	line-height: 140px;
+	background: #66ccff;
+	color: #fff;
+	font-size: 60px;
+	text-align: center;
+}
+
+ul.notebox li .content{
+	position: relative;
+	padding: 15px;
+	padding-left: 170px;
+	height: 110px;
+}
+
+ul.notebox li .content p{
+	font-size: 20px;
+}
+
+ul.notebox li .content .sub{
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+	font-size: 13px;
+	color: #999;
+	vertical-align: text-bottom;
+}
+
+ul.notebox li .content .sub span.user{
+	font-size: 20px;
+	color: #666;
+	padding-right: 10px;
+}
+
+.addnote h3{
+	font-size: 20px;
+	font-weight: normal;
+	padding-bottom: 20px;
+}
+
+.addnote textarea,
+.addnote input,
+.addnote button{
+	font-family: Ubuntu, "Helvetica Neue", Helvetica, "Nimbus Sans L", "Open Sans", "Roboto", "Segoe WP", "Segoe UI", arial, "Liberation Sans", freesans, clean, "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans CJK TC", "Source Han Sans TW", "Noto Sans CJK JP", "Source Han Sans JP", "Noto Sans CJK", "Source Han Sans", "Microsoft YaHei UI", "Microsoft YaHei", DengXian, "Wenquanyi Micro Hei", "ST Heiti", "Droid Sans Fallback", "Microsoft JhengHei", SimSun, sans-serif;
+	border: none;
+	outline: none;
+	background: none;
+	color: #777;
+}
+
+.addnote textarea{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 2px #66ccff solid;
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+.addnote input.text{
+	display: inline-block;
+	width: 12%;
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 2px #66ccff solid;
+	font-size: 16px;
+}
+
+.addnote button.submit{
+	float: right;
+	height: 38px;
+	width: 10%;
+	margin-top: 50px;
+	background: #66ccff; 
+	color: #fff;
+	border-bottom: 4px #4e92b2 solid;
+	cursor:pointer;
+	text-shadow: 0 1px 2px rgba(0,0,0,.7);
+}
+
+.addnote button.submit:hover{
+	background: #4e92b2;
+}
+
+.addnote .error{
+	display: inline-block;
+	height: 30px;
+	vertical-align: text-bottom;
+	padding-left: 20px;
+	font-size: 13px;
+	color: #777;
+}
