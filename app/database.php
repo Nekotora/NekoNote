@@ -50,7 +50,7 @@ class DB {
 	/* 查找数据 */
 	public static function find($table, $conditions = [], $page = NULL, $size = NULL) {
 		// 准备个基本的语句
-		$template = ' SELECT * FROM `' . $_prefix . $table . '` ';
+		$template = ' SELECT * FROM `' . DB::$_prefix . $table . '` ';
 		// 准备参数列表
 		$args = [];
 		// 如果有查询条件的话
@@ -81,7 +81,7 @@ class DB {
 	/* 插入 */
 	public static function insert($table, $items = []) {
 		// 和上面差不多啦
-		$template = ' INSERT INTO `' . $_prefix . $table . '` ';
+		$template = ' INSERT INTO `' . DB::$_prefix . $table . '` ';
 		$args = [];
 		if(count($items)) {
 			$insert = ' ( ';
@@ -127,6 +127,6 @@ class DB {
 	}
 	/* 断线 */
 	public static function disconnect() {
-		$_db->close();
+		DB::$_db->close();
 	}
 }

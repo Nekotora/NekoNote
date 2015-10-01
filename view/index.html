@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>NekoNote</title>
+    <link rel="stylesheet" type="text/css" href="./assets/main.css">
+    <link rel="stylesheet" type="text/css" href="./assets/font.css">
+    <script src="./assets/angular.min.js"></script>
+    <script src="./assets/controller.js"></script>
+</head>
+<body ng-app="nekonote">
+	<div class="main" ng-controller="main">
+		<div class="header">
+			<div class="inner">
+				<h1>NekoNote</h1>
+				<h2>A Simple NoteBook For You</h2>
+				<a href="" ng-click="showadd = !showadd"><i class="icon-pencil"></i></a>
+			</div>
+		</div>
+		<div class="addnote container clear" ng-controller="addnote" ng-show="showadd">
+			<h3>新建留言</h3>
+			<form name="addnote_form" novalidateng-submit="addnoteForm()">
+				<textarea name="content" required placeholder="留言内容" ng-model="note.content"></textarea>
+				<input name="user" text="text" class="text" placeholder="User" name="user" ng-model="note.user" required ng-maxlength="32">
+				<div class="error">
+					<p class="tip" ng-show="">请输入留言的内容</p>
+					<p class="tip">请输入你的名字</p>
+					<p class="tip">名字不能超过32个字符</p>
+					<p>{{note}}
+				</div>
+				<button type="submit" class="submit" ng-click="add()">发射</button>
+			</form>
+		</div>
+		<ul class="notebox" ng-controller="notebox">
+			<li ng-repeat="note in notelist | orderBy: '-parseInt(id,10)'">
+				<i class="icon-quote-left"></i>
+				<div class="content">
+					<p>{{note.content}}</p>
+					<div class="sub">
+						<span class="user">{{note.user}}</span>
+						<span class="time">{{note.time * 1000 |  date:'yyyy-MM-dd hh:mm:ss'}}</span>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
